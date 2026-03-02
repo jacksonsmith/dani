@@ -11,5 +11,6 @@ void main() {
     expect(find.text('Exemplo 1: Status do IPTU'), findsOneWidget);
     expect(find.text('Exemplo 2: Valor com API'), findsOneWidget);
     expect(find.text('Dojo - Implementar juntos'), findsOneWidget);
+    expect(find.text('Dojo de Testes'), findsOneWidget);
   });
 }

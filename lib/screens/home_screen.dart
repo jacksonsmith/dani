@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/nav_card.dart';
+import '../features/example_consumer_certo/example_consumer_certo_screen.dart';
+import '../features/example_consumer_errado/example_consumer_errado_screen.dart';
+import '../features/example_listener/example_listener_screen.dart';
 import '../features/iptu_annual_value/screens/iptu_annual_value_screen.dart';
 import '../features/iptu_annual_value_dojo/screens/iptu_annual_value_dojo_screen.dart';
 import '../features/iptu_status/screens/iptu_status_screen.dart';
+import '../features/iptu_status_test_dojo/iptu_status_test_dojo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -60,6 +64,54 @@ class HomeScreen extends StatelessWidget {
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => IptuAnnualValueDojoScreen(),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                NavCard(
+                  title: 'Dojo de Testes',
+                  subtitle: 'IptuStatusBloc - bloc_test + mocktail',
+                  icon: Icons.bug_report,
+                  color: Colors.indigo,
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const IptuStatusTestDojoScreen(),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                NavCard(
+                  title: 'Treino: BlocListener',
+                  subtitle: 'Efeitos colaterais (SnackBar) sem rebuild',
+                  icon: Icons.hearing,
+                  color: Colors.purple,
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ExampleListenerScreen(),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                NavCard(
+                  title: 'Treino: BlocConsumer (correto)',
+                  subtitle: 'Builder para UI + listener para side effects',
+                  icon: Icons.check_circle_outline,
+                  color: Colors.green,
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ExampleConsumerCertoScreen(),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                NavCard(
+                  title: 'Treino: BlocConsumer (errado)',
+                  subtitle: 'Anti-pattern: setState no listener',
+                  icon: Icons.warning_amber,
+                  color: Colors.red,
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ExampleConsumerErradoScreen(),
                     ),
                   ),
                 ),
